@@ -1,0 +1,7 @@
+<h1><%= @car.brand %> <%= @car.name %></h1>
+
+  <label>Versão: </label><%= @car.version %>
+  <p><label>Ano/Modelo: </label><%= @car.yearmodel %></p>
+  <label>Tanque: <%= @car.tankvol %> litros</label>
+
+<p><%= link_to 'Voltar', cars_path %></p>
