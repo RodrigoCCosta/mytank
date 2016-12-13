@@ -2,4 +2,17 @@
 
 <p><%= link_to 'Adicionar Carro', new_car_path %></p>
 
-<%= link_to 'Voltar', root_path %> 
+<p><%= link_to 'Voltar', root_path %></p>
+
+<% @cars.each do |car| %>
+  <table>
+    <tr>
+      <strong><th>Carro</th></strong>
+      <strong><th>Versão</th></strong>
+    </tr>
+    <tr>
+      <td><%= car.name %></td>
+      <td><%= car.version %></td>
+    </tr>
+  </table>
+<% end %>

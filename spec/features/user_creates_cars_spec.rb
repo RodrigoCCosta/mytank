@@ -1,5 +1,5 @@
 require 'rails_helper'
-feature 'user visits home' do
+feature 'user creates car' do
   scenario 'successfully' do
     car = build(:car)
 
@@ -23,5 +23,16 @@ feature 'user visits home' do
     expect(page).to have_content("Tanque: #{car.tankvol} litros")
 
     expect(page).to have_link('Voltar')
+  end
+  scenario 'user see a list of cars'do
+    car = build(:car)
+
+    visit root_path
+
+    click_on 'Carros'
+
+    expect(page).to have_content("Carro #{car.name}")
+    expect(page).to have_content("Versão #{car.version}")
+
   end
 end
