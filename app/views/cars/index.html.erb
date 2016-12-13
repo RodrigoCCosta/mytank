@@ -4,15 +4,20 @@
 
 <p><%= link_to 'Voltar', root_path %></p>
 
-<% @cars.each do |car| %>
+
+<% if @cars.any? %>
   <table>
-    <tr>
-      <strong><th>Carro</th></strong>
-      <strong><th>Versão</th></strong>
-    </tr>
-    <tr>
-      <td><%= car.name %></td>
-      <td><%= car.version %></td>
-    </tr>
+      <tr>
+        <strong><th>Carro</th></strong>
+        <strong><th>Versão</th></strong>
+      </tr>
+    <% @cars.each do |car| %>
+      <tr>
+        <td><%= car.name %></td>
+        <td><%= car.version %></td>
+      </tr>
+    <% end %>
   </table>
+  <% else %>
+  <h2>Você ainda não adicionou nenhum carro!</h2>
 <% end %>
