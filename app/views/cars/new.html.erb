@@ -1,12 +1,5 @@
 <h1>Adicionar Carro</h1>
-<%= simple_form_for @car do |f| %>
-<p><%= f.input :brand, label: 'Marca' %></p>
-<p><%= f.input :name, label: 'Modelo' %></p>
-<p><%= f.input :version, label: 'Versão' %></p>
-<p><%= f.input :yearmodel, label: 'Ano/Modelo' %></p>
-<p><%= f.input :tankvol, label: 'Volume do Tanque' %></p>
 
-  <p><%= f.button :submit, 'Adicionar' %></p>
-  <p><%= link_to 'Voltar', root_path %><p>
+<%= render :partial => 'cars', :locals => {:botao => 'Adicionar'} %>
 
-<% end %>
+<p><%= link_to 'Voltar', cars_path %><p>

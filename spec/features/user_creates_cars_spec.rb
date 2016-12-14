@@ -33,6 +33,21 @@ feature 'user creates car' do
 
     expect(page).to have_content car.name
     expect(page).to have_content car.version
+  end
+  scenario 'click on name and visit car page'do
+    car = create(:car)
 
+    visit root_path
+
+    click_on 'Carros'
+
+    click_on car.name
+
+    expect(page).to have_css('h1', text: "#{car.brand} #{car.name}")
+    expect(page).to have_content("Versão: #{car.version}")
+    expect(page).to have_content("Ano/Modelo: #{car.yearmodel}")
+    expect(page).to have_content("Tanque: #{car.tankvol} litros")
+
+    expect(page).to have_link('Voltar')
   end
 end
