@@ -1,12 +1,10 @@
 <h1><%= @car.brand %> <%= @car.name %></h1>
 
-  <label>Versão: </label><%= @car.version %>
-  <p><label>Ano/Modelo: </label><%= @car.yearmodel %></p>
-  <label>Tanque: <%= @car.tankvol %> litros</label>
+  <label><strong>Versão: </strong></label><%= @car.version %>
+  <p><label><strong>Ano/Modelo: </strong></label><%= @car.yearmodel %></p>
+  <label><strong>Tanque: </strong><%= @car.tankvol %> litros</label>
 
 <p><%= link_to 'Voltar', cars_path %></p>
 <p><%= link_to 'Editar', edit_car_path %></p>
-<p><%= link_to 'Apagar Carro', @car,
-method: :delete,
-data: { confirm:
-'Tem certeza que deseja apagar este carro? Seus dados de consumo serão apagados, alterando o cáculo da média geral.'} %></p>
+
+<!-- <p><%= link_to 'Apagar Carro' %></p> -->

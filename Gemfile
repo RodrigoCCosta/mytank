@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'selenium-webdriver' 
-
 gem 'simple_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'

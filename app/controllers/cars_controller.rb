@@ -12,6 +12,9 @@ class CarsController < ApplicationController
     @car = Car.new(car_params)
     if @car.save
       redirect_to @car
+    else
+      flash[:alert] = 'É necessário preencher todos os campos!'
+      render :new
     end
   end
 
@@ -23,18 +26,14 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     if @car.update(car_params)
       redirect_to @car
+    else
+      flash[:alert] = 'É necessário preencher todos os campos!'
+      render :edit
     end
   end
 
   def show
     @car = Car.find(params[:id])
-  end
-
-  def destroy
-      @car = Car.find(params[:id])
-      @car.destroy
-
-      redirect_to cars_path
   end
 
   private
