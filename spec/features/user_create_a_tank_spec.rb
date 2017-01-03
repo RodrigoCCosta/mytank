@@ -1,6 +1,5 @@
 require 'rails_helper'
   feature 'user creates a tank' do
-    include ActiveSupport::Testing::TimeHelpers
     scenario 'successfully' do
       car = create(:car)
       tank = build(:tank)
@@ -11,6 +10,7 @@ require 'rails_helper'
 
       click_on 'Novo Tanque'
 
+      expect(page).to have_css('h1', text: "Registrar Tanque")
       select 'car',                          from: 'Escolha o Carro:'
       select 'Urbano',                       from: 'Trecho predominantemente:'
       fill_in 'Distância percorrida:',       with: tank.distance
