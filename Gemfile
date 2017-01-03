@@ -36,6 +36,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'rubocop', require: false
+  gem 'pry-byebug'
 end
 
 group :development do

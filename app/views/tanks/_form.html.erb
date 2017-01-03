@@ -1,0 +1,15 @@
+<%= simple_form_for @tank do |f| %>
+
+  <p><%= f.association :car, collection: Car.all, prompt: 'Seus carros cadastrados', label: 'Escolha o Carro:' %></p>
+  <p><%= f.input :way, collection: @tank.way, prompt: 'Tipos de trecho', label: 'Trecho predominantemente:' %> </p>
+  <p><%= f.input :distance, label: 'Distância percorrida:' %> </p>
+  <p><%= f.input :fillvol, label: 'Litros para completar:' %> </p>
+  <p><%= f.input :price, label: 'Preço por litro: R$' %> </p>
+  <p><%= f.input :fuel, collection: @tank.fuel, prompt: 'Tipos de combustível', label: 'Combustível: ' %> </p>
+  <p><%= f.input :startdate, label: 'Data início:' %> </p>
+  <p><%= f.input :finaldate, label: 'Data final:' %> </p>
+  <p><%= f.input :obs, label: 'Anotações e Oberservações:' %> </p>
+
+<p><%= f.button :submit, botao %></p>
+
+<% end %>
