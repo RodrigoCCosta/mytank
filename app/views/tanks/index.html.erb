@@ -1,25 +1,28 @@
 <h1>Meus Tanques</h1>
 
-<p><%= link_to 'Novo Tanque', new_tank_path(@car) %></p>
+<p><%= link_to 'Novo Tanque', new_tank_path %></p>
 
 <p><%= link_to 'Home', root_path %></p>
 
-
-<% if @tanks.any? %>
-  <table>
-      <tr>
-        <strong><th>Reabastecido em:</th></strong>
-        <strong><th>Carro:</th></strong>
-        <strong><th>Consumo médio:</th></strong>
-      </tr>
-    <% @tanks.each do |tank| %>
-      <tr>
-        <td><%= link_to tank.finaldate, tank %></td>
-        <td><%= tank.car.name %></td>
-        <td><%= (tank.distance/tank.fillvol).round(2) %> km/l</td>
-      </tr>
+<div class="panel-heading">
+  <div class="panel-body">
+    <% if @tanks.any? %>
+      <table class="table table-default">
+          <tr>
+            <strong><th>Reabastecido em:</th></strong>
+            <strong><th>Carro:</th></strong>
+            <strong><th>Consumo médio:</th></strong>
+          </tr>
+        <% @tanks.each do |tank| %>
+          <tr>
+            <td><%= link_to tank.finaldate, tank %></td>
+            <td><%= tank.car.name %></td>
+            <td><%= (tank.distance/tank.fillvol).round(2) %> km/l</td>
+          </tr>
+        <% end %>
+      </table>
+      <% else %>
+      <h3>Você ainda não adicionou nenhum tanque!</h3>
     <% end %>
-  </table>
-  <% else %>
-  <h3>Você ainda não adicionou nenhum tanque!</h3>
-<% end %>
+    </div>
+  </div>

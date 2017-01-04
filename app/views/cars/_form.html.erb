@@ -1,11 +1,20 @@
-<%= simple_form_for @car do |f| %>
+<%= simple_form_for @car, html: { class: 'form-horizontal' } do |f| %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <div class="panel-body">
+      <%= f.input :brand, label: 'Marca' %>
+      <%= f.input :name, label: 'Modelo' %>
+      <%= f.input :version, label: 'Versão' %>
+      <%= f.input :yearmodel, label: 'Ano/Modelo' %>
+      <%= f.input :tankvol, label: 'Volume do Tanque' %>
+    </div>
+  </div>
+</div>
 
-  <p><%= f.input :brand, label: 'Marca' %></p>
-  <p><%= f.input :name, label: 'Modelo' %></p>
-  <p><%= f.input :version, label: 'Versão' %></p>
-  <p><%= f.input :yearmodel, label: 'Ano/Modelo' %></p>
-  <p><%= f.input :tankvol, label: 'Volume do Tanque' %></p>
+<nav>
+  <%= f.button :submit, botao, class: 'btn btn-default' %>
+  <%= link_to 'Voltar', cars_path, class: 'btn btn-default' %>
+</nav>
 
-<p><%= f.button :submit, botao %></p>
 
 <% end %>

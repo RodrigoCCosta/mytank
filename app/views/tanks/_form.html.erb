@@ -1,15 +1,24 @@
 <%= simple_form_for @tank do |f| %>
 
-  <p><%= f.association :car, collection: Car.all, prompt: 'Seus carros cadastrados', label: 'Escolha o Carro:' %></p>
-  <p><%= f.input :way, collection: @tank.way_types, prompt: 'Tipos de trecho', label: 'Trecho predominantemente:'  %> </p>
-  <p><%= f.input :distance, label: 'Distância percorrida:' %> </p>
-  <p><%= f.input :fillvol, label: 'Litros para completar:' %> </p>
-  <p><%= f.input :price, label: 'Preço por litro: R$' %> </p>
-  <p><%= f.input :fuel, collection: @tank.fuel_types, prompt: 'Tipos de combustível', label: 'Combustível: ' %> </p>
-  <p><%= f.input :startdate, label: 'Data início:' %> </p>
-  <p><%= f.input :finaldate, label: 'Data final:' %> </p>
-  <p><%= f.input :obs, label: 'Anotações e Oberservações:' %> </p>
+<div class="panel-heading">
+  <div class="panel-body">
+    <%= f.association :car, collection: Car.all, prompt: 'Seus carros cadastrados', label: 'Escolha o Carro:' %><br />
+    <%= f.input :way, collection: @tank.way_types, prompt: 'Tipos de trecho', label: 'Trecho predominantemente:'  %><br />
+    <%= f.input :distance, label: 'Distância percorrida:' %><br />
+    <%= f.input :fillvol, label: 'Litros para completar:' %><br />
+    <%= f.input :price, label: 'Preço por litro: R$' %><br />
+    <%= f.input :fuel, collection: @tank.fuel_types, prompt: 'Tipos de combustível', label: 'Combustível: ' %><br />
+    <%= f.input :startdate, label: 'Data início:' %><br />
+    <%= f.input :finaldate, label: 'Data final:' %><br />
+    <%= f.input :obs, label: 'Anotações e Oberservações:' %>
+  </div>
+</div>
 
-<p><%= f.button :submit, botao %></p>
+
+<nav>
+  <%= f.button :submit, botao, class: 'btn btn-default'%>
+  <%= link_to 'Voltar', tanks_path, class: 'btn btn-default' %>
+</nav>
+
 
 <% end %>

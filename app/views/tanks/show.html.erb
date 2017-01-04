@@ -1,12 +1,19 @@
-<h1><%= @tank.car.brand %> <%= @tank.car.name %></h1>
+<h1><%= @tank.car.brand %> <%= @tank.car.name %> </h1>
 <strong><h2>Tanque utilizado de <%= @tank.startdate %> a <%= @tank.finaldate %></h2></strong>
 
-  <p><%= @tank.fillvol %> litros de <%= @tank.fuel %> gastos em <%= @tank.distance %> km de trecho <%= @tank.way %></p>
-  <p>O custo total foi de <strong>R$ <%= (@tank.price*@tank.fillvol).round(2) %></strong></p>
-  <p>O custo por Km foi de <strong>R$ <%= ((@tank.price*@tank.fillvol).round(2)/(@tank.distance)).round(2) %></strong></p>
-  <p>O consumo médio foi de <strong><%= (@tank.distance/@tank.fillvol).round(2) %> km/l</strong></p>
-  <p><strong>Anotações e Observações: </strong><br/><%= @tank.obs %></p>
+
+  <div class="panel-heading">
+    <div class="panel-body">
+      <p><strong><%= @tank.fillvol %> litros</strong> de <%= @tank.fuel %> gastos em <strong><%= @tank.distance %> km</strong> de trecho <%= @tank.way %></p>
+      <p>O custo total foi de <strong>R$ <%= (@tank.price*@tank.fillvol).round(2) %></strong></p>
+      <p>O custo por Km foi de <strong>R$ <%= ((@tank.price*@tank.fillvol).round(2)/(@tank.distance)).round(2) %></strong></p>
+      <p>O consumo médio foi de <strong><%= (@tank.distance/@tank.fillvol).round(2) %> km/l</strong></p>
+      <p><strong>Anotações e Observações: </strong><br/><%= @tank.obs %></p>
+    </div>
+  </div>
 
 
-<p><%= link_to 'Voltar', tanks_path %></p>
-<p><%= link_to 'Editar', edit_tank_path %></p>
+<nav>
+  <%= link_to 'Editar', edit_tank_path, class: 'btn btn-default' %>
+  <%= link_to 'Voltar', tanks_path, class: 'btn btn-default' %>
+</nav>

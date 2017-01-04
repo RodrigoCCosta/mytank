@@ -1,8 +1,16 @@
 <h1><%= @car.brand %> <%= @car.name %></h1>
 
-  <label><strong>Versão: </strong></label><%= @car.version %>
-  <p><label><strong>Ano/Modelo: </strong></label><%= @car.yearmodel %></p>
-  <label><strong>Tanque: </strong><%= @car.tankvol %> litros</label>
 
-<p><%= link_to 'Editar', edit_car_path %></p>
-<p><%= link_to 'Voltar', cars_path %></p>
+<div class="panel-heading">
+  <div class="panel-body">
+    <label><strong>Versão: </strong></label><%= @car.version %><br />
+    <label><strong>Ano/Modelo: </strong></label><%= @car.yearmodel %><br />
+    <label><strong>Tanque: </strong><%= @car.tankvol %> litros</label><br />
+  </div>
+</div>
+
+
+<nav>
+  <%= link_to 'Editar', edit_car_path, class: 'btn btn-default' %>
+  <%= link_to 'Voltar', cars_path, class: 'btn btn-default' %>
+</nav>
